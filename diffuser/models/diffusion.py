@@ -51,6 +51,7 @@ class GaussianDiffusion(nn.Module):
         self.observation_dim = observation_dim
         self.action_dim = action_dim
         self.transition_dim = observation_dim + action_dim
+        print(self.transition_dim)
         self.model = model
 
         betas = cosine_beta_schedule(n_timesteps)
