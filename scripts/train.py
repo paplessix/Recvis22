@@ -59,7 +59,7 @@ diffusion_config = utils.Config(
     args.diffusion,
     savepath=(args.savepath, 'diffusion_config.pkl'),
     horizon=args.horizon,
-    observation_dim=0,
+    observation_dim=observation_dim,
     action_dim=action_dim,
     n_timesteps=args.n_diffusion_steps,
     loss_type=args.loss_type,

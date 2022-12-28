@@ -158,7 +158,6 @@ class GaussianDiffusion(nn.Module):
     @torch.no_grad()
     def p_sample_loop(self, shape, cond, verbose=True, return_chain=False, sample_fn=default_sample_fn, **sample_kwargs):
         device = self.betas.device
-        print("shape", shape)
         batch_size = shape[0]
         x = torch.randn(shape, device=device)
         x = apply_conditioning(x, cond, self.action_dim)
@@ -207,7 +206,6 @@ class GaussianDiffusion(nn.Module):
 
     def p_losses(self, x_start, cond, t):
         noise = torch.randn_like(x_start)
-        print("xstart",x_start.shape)
         x_noisy = self.q_sample(x_start=x_start, t=t, noise=noise)
         x_noisy = apply_conditioning(x_noisy, cond, self.action_dim)
 
