@@ -51,7 +51,6 @@ class GaussianDiffusion(nn.Module):
         self.observation_dim = observation_dim
         self.action_dim = action_dim
         self.transition_dim = observation_dim + action_dim
-        print(self.transition_dim)
         self.model = model
 
         betas = cosine_beta_schedule(n_timesteps)
@@ -211,9 +210,11 @@ class GaussianDiffusion(nn.Module):
 
         x_noisy = self.q_sample(x_start=x_start, t=t, noise=noise)
         x_noisy = apply_conditioning(x_noisy, cond, self.action_dim)
+        print(x_noisy.shape)
 
         x_recon = self.model(x_noisy, cond, t)
         x_recon = apply_conditioning(x_recon, cond, self.action_dim)
+        print(x_recon.shape)
 
         assert noise.shape == x_recon.shape
 
