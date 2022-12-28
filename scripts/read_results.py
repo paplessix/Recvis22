@@ -13,7 +13,7 @@ DATASETS = [
 	for buffer in ['medium-replay', 'medium', 'medium-expert']
 ]
 
-LOGBASE = 'logs/pretrained/'
+LOGBASE = 'logs/'
 TRIAL = '*'
 EXP_NAME = 'plans*/*'
 verbose = False
