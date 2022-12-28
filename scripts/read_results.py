@@ -4,7 +4,7 @@ import numpy as np
 import json
 import pdb
 
-import diffuser.utils as utils
+from diffuser.utils import Parser
 
 
 DATASETS = [
@@ -13,7 +13,7 @@ DATASETS = [
 	for buffer in ['medium-replay', 'medium', 'medium-expert']
 ]
 
-LOGBASE = 'logs/pretrained/'
+LOGBASE = 'logs/'
 TRIAL = '*'
 EXP_NAME = 'plans*/*'
 verbose = False
@@ -67,7 +67,7 @@ def load_result(path):
 
 if __name__ == '__main__':
 
-	class Parser(utils.Parser):
+	class Parser(Parser):
 	    dataset: str = None
 
 	args = Parser().parse_args()
