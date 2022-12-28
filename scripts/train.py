@@ -59,7 +59,7 @@ diffusion_config = utils.Config(
     args.diffusion,
     savepath=(args.savepath, 'diffusion_config.pkl'),
     horizon=args.horizon,
-    observation_dim=observation_dim,
+    observation_dim=0,
     action_dim=action_dim,
     n_timesteps=args.n_diffusion_steps,
     loss_type=args.loss_type,
@@ -106,7 +106,9 @@ trainer = trainer_config(diffusion, dataset, renderer)
 utils.report_parameters(model)
 
 print('Testing forward...', end=' ', flush=True)
+
 batch = utils.batchify(dataset[0])
+print(batch.shape)
 loss, _ = diffusion.loss(*batch)
 loss.backward()
 print('✓')
