@@ -4,7 +4,7 @@ import numpy as np
 import json
 import pdb
 
-import diffuser.utils as utils
+import diffuser.utils.Parser as pars
 
 
 DATASETS = [
@@ -67,7 +67,7 @@ def load_result(path):
 
 if __name__ == '__main__':
 
-	class Parser(utils.Parser):
+	class Parser(pars):
 	    dataset: str = None
 
 	args = Parser().parse_args()
