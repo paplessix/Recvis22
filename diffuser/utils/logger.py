@@ -14,19 +14,19 @@ class Logger:
         if t % self.vis_freq != 0:
             return
         # return
-        ## render image of plans
-        self.renderer.composite(
-            os.path.join(self.savepath, f'{t}.png'),
-            samples.observations,
-        )
+        # ## render image of plans
+        # self.renderer.composite(
+        #     os.path.join(self.savepath, f'{t}.png'),
+        #     samples.observations,
+        # )
 
-        ## render video of plans
-        self.renderer.render_plan(
-            os.path.join(self.savepath, f'{t}_plan.mp4'),
-            samples.actions[:self.max_render],
-            samples.observations[:self.max_render],
-            state,
-        )
+        # ## render video of plans
+        # self.renderer.render_plan(
+        #     os.path.join(self.savepath, f'{t}_plan.mp4'),
+        #     samples.actions[:self.max_render],
+        #     samples.observations[:self.max_render],
+        #     state,
+        # )
 
         if rollout is not None:
             ## render video of rollout thus far
