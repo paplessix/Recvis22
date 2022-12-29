@@ -13,7 +13,7 @@ class Logger:
     def log(self, t, samples, state, rollout=None):
         if t % self.vis_freq != 0:
             return
-        return
+        # return
         ## render image of plans
         self.renderer.composite(
             os.path.join(self.savepath, f'{t}.png'),

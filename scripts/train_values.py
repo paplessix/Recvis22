@@ -52,7 +52,7 @@ model_config = utils.Config(
     args.model,
     savepath=(args.savepath, 'model_config.pkl'),
     horizon=args.horizon,
-    transition_dim=action_dim,
+    transition_dim=action_dim+observation_dim,
     cond_dim=observation_dim,
     dim_mults=args.dim_mults,
     device=args.device,
@@ -62,7 +62,7 @@ diffusion_config = utils.Config(
     args.diffusion,
     savepath=(args.savepath, 'diffusion_config.pkl'),
     horizon=args.horizon,
-    observation_dim=0, #TODO
+    observation_dim=observation_dim, #TODO
     action_dim=action_dim,
     n_timesteps=args.n_diffusion_steps,
     loss_type=args.loss_type,
