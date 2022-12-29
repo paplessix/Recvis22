@@ -95,7 +95,7 @@ base = {
         'batch_size': 32,
         'learning_rate': 2e-4,
         'gradient_accumulate_every': 2,
-        'ema_decay': 0.99,
+        'ema_decay': 0.995,
         'save_freq': 1000,
         'sample_freq': 0,
         'n_saves': 5,
@@ -134,7 +134,7 @@ base = {
         'n_diffusion_steps': 20,
 
         ## value function
-        'discount': 0.997, #TODO
+        'discount': 0.99, #TODO
 
         ## loading
         'diffusion_loadpath': 'f:diffusion/defaults_H{horizon}_T{n_diffusion_steps}',
