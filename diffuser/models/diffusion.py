@@ -223,7 +223,7 @@ class GaussianDiffusion(nn.Module):
     def loss(self, x, *args):
         batch_size = len(x)
         t = torch.randint(0, self.n_timesteps, (batch_size,), device=x.device).long()
-        x = x[:,:,:self.action_dim] # <--- Train only on actions TODO
+        # x = x[:,:,:self.action_dim] # <--- Train only on actions TODO
         return self.p_losses(x, *args, t)
 
     def forward(self, cond, *args, **kwargs):
