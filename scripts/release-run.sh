@@ -9,7 +9,7 @@ do
 				for t_stopgrad in 4;
 				do
 								python scripts/plan_guided.py \
-									--dataset halfcheetah-medium-v2 \
+									--dataset halfcheetah-medium-expert-v2 \
 									--horizon $horizon \
 									--n_guide_steps $n_guide_steps \
 									--scale $scale \
