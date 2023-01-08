@@ -13,6 +13,7 @@ do
 									--horizon $horizon \
 									--n_guide_steps $n_guide_steps \
 									--scale $scale \
+									--logbase logs
 									--t_stopgrad $t_stopgrad \
 									--prefix plans/release \
 									--verbose True \
