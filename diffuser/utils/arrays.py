@@ -3,7 +3,7 @@ import numpy as np
 import torch
 import pdb
 
-DTYPE = torch.float
+DTYPE = torch.float64
 DEVICE = 'cuda:0'
 
 #-----------------------------------------------------------------------------#
