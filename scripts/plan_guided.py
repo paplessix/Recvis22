@@ -88,7 +88,10 @@ for t in range(args.max_episode_length):
     state = env.state_vector().copy()
 
     ## format current observation for conditioning
-    conditions = {0: observation}
+    conditions = {}
+    for i in range(policy.diffusion_model.horizon):
+        conditions[i] = observation
+    # conditions = {0: observation}
     action, samples = policy(conditions, batch_size=args.batch_size, verbose=args.verbose)
 
     ## execute action in environment

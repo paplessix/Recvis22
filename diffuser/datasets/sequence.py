@@ -74,7 +74,11 @@ class SequenceDataset(torch.utils.data.Dataset):
         '''
             condition on current observation for planning
         '''
-        return {0: observations[0]}
+        cond = {}
+        for i in range(self.horizon):
+            cond[i] = observations[i]
+        return cond
+        # return {0: observations[0]}
 
     def __len__(self):
         return len(self.indices)
